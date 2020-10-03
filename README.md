@@ -6,8 +6,8 @@ A simple Calculator with PySide, PyQt and some functions
 
 ## Task-List
 
-- [ ] Criar Funções Basicas
-- [ ] Criar Modulo e Inserir as Funções
+- [x] Criar Funções Basicas
+- [x] Criar Modulo e Inserir as Funções
 - [ ] Criar Gui para Calculadora (Basico)
-- [ ] Linkar as funções Com o Gui
+- [ ] Criar os Sinais ligando as funções Com o Gui
 - [ ] Melhorar Desing Gui
