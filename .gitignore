@@ -133,4 +133,5 @@ dmypy.json
 *.xml
 *.pyc
 *.bat
+*.txt
 *.ui
