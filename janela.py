@@ -5,23 +5,43 @@ from PyQt5.QtGui import *
 
 
 def main(ui):
+
+    def teste():
+        print('TESTE')
+
+    def func_resultado(resultado):
+        resultado = str(resultado)
+        ui.txt_resultado.setText(resultado)
+
+    def func_somar():
+        n1,n2 = receber_valores(ui)
+        resultado = soma(n1,n2)
+        func_resultado(resultado)
+
+    def func_subtrair():
+        n1,n2 = receber_valores(ui)
+        resultado = subtrair(n1,n2)
+        func_resultado(resultado)
+
+
+    def func_multiplicar():
+        n1,n2 = receber_valores(ui)
+        resultado = multiplicar(n1,n2)
+        func_resultado(resultado)
+
+    def func_dividir():
+        n1,n2 = receber_valores(ui)
+        resultado = dividir(n1,n2)
+        func_resultado(resultado)
+
+    ui.centralwidget.returnPressed.connect(teste)
     ui.txt1.setValidator(QDoubleValidator(0.99,99.99,2))
     ui.txt2.setValidator(QDoubleValidator(0.99,99.99,2))
 
-    def func_somar():
-        n1 = ui.txt1.text()
-        n2 = ui.txt2.text()
-        if verifica_numero(n1) == True and verifica_numero(n2) == True:
-            n1 = br_to_us(n1)
-            n2 = br_to_us(n2)
-            n1 = float(n1)
-            n2 = float(n2)
-            resultado = soma(n1,n2)
-            ui.txt_resultado.setText(resultado)
-        else:
-            ui.txt_resultado.setText('Digite Dois Numeros Corretamente')
-
-    ui.botao.clicked.connect(func_somar)
+    ui.botao_somar.clicked.connect(func_somar)
+    ui.botao_subtrair.clicked.connect(func_subtrair)
+    ui.botao_multiplicar.clicked.connect(func_multiplicar)
+    ui.botao_dividir.clicked.connect(func_dividir)
 
 
 if __name__ == "__main__":

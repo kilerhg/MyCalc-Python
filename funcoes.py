@@ -105,8 +105,12 @@ def formatar_entrada(numero):
     return numero
 
 
-a = 1
-b = 100.01
-a = float(a)
-b = float(b)
-print(soma(a,b))
+def receber_valores(ui):
+    n1 = ui.txt1.text()
+    n2 = ui.txt2.text()
+    if verifica_numero(n1) == True and verifica_numero(n2) == True:
+        n1 = br_to_us(n1)
+        n2 = br_to_us(n2)
+        n1 = float(n1)
+        n2 = float(n2)
+    return n1,n2
