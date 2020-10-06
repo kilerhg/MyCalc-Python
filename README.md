@@ -15,7 +15,7 @@ Clonar este repositorio: ```git clone https://github.com/kilerhg/MyCalc-Python.g
 
 ## Abrindo
 
-Abrir o Cmd ou PowerShell Na pasta e rodar o comando: ```python interface.py```
+Abrir o Cmd ou PowerShell Na pasta e rodar o comando: ```python janela.py```
 
 ## Task-List
 
