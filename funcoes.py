@@ -22,7 +22,10 @@ def multiplicar(numero1,numero2):
 
 def dividir(numero1 , numero2):
     d = 0
-    d = numero1 / numero2
+    if numero1 == 0 or numero2 == 0:
+        pass
+    else:
+        d = numero1 / numero2
     return formatar_saida(d)
 
 
@@ -105,12 +108,26 @@ def formatar_entrada(numero):
     return numero
 
 
-def receber_valores(ui):
-    n1 = ui.txt1.text()
-    n2 = ui.txt2.text()
+def receber_valores(ui,n1=0,n2=0):
+    if n1 == 0 and n2 == 0:
+        n1 = ui.txt1.text()
+    if n1 == '': n1 = 0
+    if n2 == '': n2 = 0
     if verifica_numero(n1) == True and verifica_numero(n2) == True:
         n1 = br_to_us(n1)
         n2 = br_to_us(n2)
         n1 = float(n1)
         n2 = float(n2)
     return n1,n2
+
+
+def calculo(n1,n2,operador='+'):
+    if operador == '+':
+        resultado = soma(n1,n2)
+    elif operador == '-':
+        resultado = subtrair(n1,n2)
+    elif operador == '*':
+        resultado = multiplicar(n1,n2)
+    elif operador == '/':
+        resultado = dividir(n1,n2)
+    return resultado
