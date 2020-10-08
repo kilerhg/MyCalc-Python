@@ -29,3 +29,7 @@ Abrir o Cmd ou PowerShell Na pasta e rodar o comando: ```python janela.py```
 - [ ] Criar Loop De Resultado
 - [ ] Criar Historico das Contas Realizadas
 - [ ] Criar Aba para salvar as contas Realizadas
+
+## Fluxograma Funcionamento
+
+![Flow](./flow.png)
