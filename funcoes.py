@@ -10,7 +10,7 @@ def soma(numero1,numero2):
 
 def subtrair(numero1,numero2):
     s = 0
-    s = numero1 - numero2
+    s = numero2 - numero1
     return formatar_saida(s)
 
 
@@ -23,9 +23,10 @@ def multiplicar(numero1,numero2):
 def dividir(numero1 , numero2):
     d = 0
     if numero1 == 0 or numero2 == 0:
-        pass
+        d = 0
     else:
         d = numero1 / numero2
+        # d = numero2 / numero1
     return formatar_saida(d)
 
 
@@ -38,14 +39,14 @@ def raiz(numero, grau=2):
     r = numero ** (1/grau)
     return formatar_saida(r)
 
-# Verificadores / Conversores / Funções Extras
-
 
 def inverte_sinal(numero):
     if verifica_numero(numero):
         numero = float(br_to_us(numero))
         numero *= -1
-    return numero
+    return formatar_saida(numero)
+
+# Verificadores / Conversores / Funções Extras
 
 
 def verifica_numero(numero):
@@ -110,7 +111,8 @@ def formatar_entrada(numero):
 
 def receber_valores(ui,n1=0,n2=0):
     if n1 == 0 and n2 == 0:
-        n1 = ui.txt1.text()
+        # 1 n1 = ui.txt1.text()
+        n1 = ui.txt_resultado.text()
     if n1 == '': n1 = 0
     if n2 == '': n2 = 0
     if verifica_numero(n1) == True and verifica_numero(n2) == True:
@@ -129,5 +131,15 @@ def calculo(n1,n2,operador='+'):
     elif operador == '*':
         resultado = multiplicar(n1,n2)
     elif operador == '/':
-        resultado = dividir(n1,n2)
+        resultado = dividir(n2,n1)
+    elif operador == 'x^2':
+        resultado = potencia(n1)
+    elif operador == 'x^0.5':
+        resultado = raiz(n1)
+    elif operador == '*-1':
+        resultado = inverte_sinal(n1)
+    elif operador == '1/x':
+        resultado = dividir(1,n1)
+    elif operador == '%':
+        resultado = dividir(n1,100)
     return resultado
