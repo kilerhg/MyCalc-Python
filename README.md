@@ -2,7 +2,7 @@
 
 ## Descrição
 
-A simple Calculator with PySide, PyQt and some functions
+A simple Calculator with PySide2, PyQt5 and some functions
 
 ## Como Usar
 
