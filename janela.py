@@ -7,6 +7,7 @@ import keyboard
 # 18:29
 
 def main(ui):
+    from time import sleep
 
     def func_global(ope='+'):
         global operador
@@ -46,6 +47,15 @@ def main(ui):
     def func_porcentagem():
         func_global('%')
 
+
+    def func_limpar():
+        global num1
+        global num2
+        global operador
+        operador = ''
+        num1 = num2 = 0
+        ui.txt_old.clear()
+
     def receber_numero():
         global num1
         global operador
@@ -54,7 +64,6 @@ def main(ui):
         # 1 ui.txt1.clear()
         ui.txt_resultado.clear()
         ui.txt_old.setText(f'{num1[0:5]: >5} {operador}')
-
 
     def func_enviar():
         global operador
@@ -135,6 +144,7 @@ def main(ui):
     ui.botao_inverte_sinal.clicked.connect(func_inverte)
     ui.botao_1x.clicked.connect(func_div1)
     ui.botao_porcentagem.clicked.connect(func_porcentagem)
+    ui.botao_limpar.clicked.connect(func_limpar)
 
 
     # Teclado Numerico
@@ -168,7 +178,8 @@ def main(ui):
     ui.botao_dividir.setShortcut('/')
     ui.botao_multiplicar.setShortcut('*')
     ui.botao_enviar.setShortcut('enter')
-    ui.botao_limpar.setShortcut('delete')
+    ui.botao_17.setShortcut('delete')
+    ui.botao_limpar.setShortcut('backspace')
     ui.botao_virgula.setShortcut(',')
 
 

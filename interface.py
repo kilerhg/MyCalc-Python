@@ -15,10 +15,14 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(328, 377)
+        MainWindow.setMinimumSize(QtCore.QSize(328, 377))
+        MainWindow.setMaximumSize(QtCore.QSize(328, 377))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("calc.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/newPrefix/calc.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setMinimumSize(QtCore.QSize(328, 377))
+        self.centralwidget.setMaximumSize(QtCore.QSize(328, 377))
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(-1, -1, 531, 401))
@@ -48,11 +52,13 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         font.setKerning(True)
         self.txt_resultado.setFont(font)
+        self.txt_resultado.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.txt_resultado.setText("")
-        self.txt_resultado.setReadOnly(False)
+        self.txt_resultado.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.txt_resultado.setReadOnly(True)
         self.txt_resultado.setObjectName("txt_resultado")
         self.txt_old = QtWidgets.QLabel(self.frame_3)
-        self.txt_old.setGeometry(QtCore.QRect(110, 30, 151, 31))
+        self.txt_old.setGeometry(QtCore.QRect(150, 30, 151, 31))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
         font.setPointSize(16)
@@ -66,7 +72,7 @@ class Ui_MainWindow(object):
         self.gridFrame = QtWidgets.QFrame(self.frame)
         self.gridFrame.setGeometry(QtCore.QRect(5, 136, 320, 240))
         self.gridFrame.setStyleSheet("background-color: rgb(70, 70, 70);\n"
-"border: 1px solid white; ")
+"")
         self.gridFrame.setObjectName("gridFrame")
         self.gridLayout = QtWidgets.QGridLayout(self.gridFrame)
         self.gridLayout.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
@@ -111,7 +117,12 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.botao_limpar.setFont(font)
-        self.botao_limpar.setStyleSheet("")
+        self.botao_limpar.setMouseTracking(True)
+        self.botao_limpar.setCheckable(False)
+        self.botao_limpar.setChecked(False)
+        self.botao_limpar.setAutoDefault(False)
+        self.botao_limpar.setDefault(False)
+        self.botao_limpar.setFlat(False)
         self.botao_limpar.setObjectName("botao_limpar")
         self.gridLayout.addWidget(self.botao_limpar, 0, 3, 1, 1)
         self.botao_somar = QtWidgets.QPushButton(self.gridFrame)
@@ -184,6 +195,7 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.botao_18.setFont(font)
         self.botao_18.setStyleSheet("")
+        self.botao_18.setFlat(False)
         self.botao_18.setObjectName("botao_18")
         self.gridLayout.addWidget(self.botao_18, 0, 2, 1, 1)
         self.botao_dividir = QtWidgets.QPushButton(self.gridFrame)
@@ -320,6 +332,10 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
+        self.botao_17.clicked['bool'].connect(self.txt_resultado.clear)
+        self.botao_17.clicked['bool'].connect(self.txt_old.clear)
+        self.botao_18.clicked['bool'].connect(self.txt_resultado.clear)
+        self.botao_18.clicked['bool'].connect(self.txt_old.clear)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -354,6 +370,7 @@ class Ui_MainWindow(object):
         self.botao_4.setText(_translate("MainWindow", "4"))
         self.botao_raiz_quadrada.setText(_translate("MainWindow", "X^0.5"))
         self.botao_3.setText(_translate("MainWindow", "3"))
+import base_rc
 
 
 if __name__ == "__main__":
