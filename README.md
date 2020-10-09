@@ -24,9 +24,10 @@ Abrir o Cmd ou PowerShell Na pasta e rodar o comando: ```python janela.py```
 - [x] Testar As Funções reagindo com a GUI arcaica 
 - [x] Criar Gui para Calculadora (Basico)
 - [x] Criar os Sinais ligando as funções Com o Gui
-- [ ] Melhorar Desing Gui
-- [ ] Melhorar Os Sinais
-- [ ] Criar Loop De Resultado
+- [x] Melhorar Desing Gui
+- [x] Melhorar Os Sinais
+- [x] Criar Loop De Resultado
+- [x] Compilar para .EXE
 - [ ] Criar Historico das Contas Realizadas
 - [ ] Criar Aba para salvar as contas Realizadas
 
