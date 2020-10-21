@@ -34,3 +34,8 @@ Abrir o Cmd ou PowerShell Na pasta e rodar o comando: ```python janela.py```
 ## Fluxograma Funcionamento
 
 ![Flow](./flow.png)
+
+
+## Screenshot
+
+![Interface](./interface.PNG)
