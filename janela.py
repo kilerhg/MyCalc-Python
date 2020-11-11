@@ -3,8 +3,6 @@ from funcoes import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 import keyboard
-# 17:26
-# 18:29
 
 def main(ui):
     from time import sleep
